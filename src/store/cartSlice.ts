@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from './store';
 
 export interface CartState {
-  cart: Array<string>,
+  cart: Array<number>,
 }
 
 const initialState: CartState = {
@@ -13,11 +13,11 @@ export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addToCart: (state,action: PayloadAction<{barcode:string}>) => {
-      state.cart.push(action.payload.barcode)
+    addToCart: (state,action: PayloadAction<{id:number}>) => {
+      state.cart.push(action.payload.id)
     },
-    removeFromCart: (state,action: PayloadAction<{barcode:string}>)=> {
-      const index = state.cart.indexOf(action.payload.barcode);
+    removeFromCart: (state,action: PayloadAction<{id:number}>)=> {
+      const index = state.cart.indexOf(action.payload.id);
       if (index >-1) {
         state.cart.splice(index,1);
       }

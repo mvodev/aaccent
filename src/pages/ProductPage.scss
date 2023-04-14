@@ -3,7 +3,14 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  
+  padding: 10px;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   &__title {
     font-weight: 600;
     font-size: 32px;
@@ -18,5 +25,18 @@
   &__img {
     max-width: 600px;
     object-fit: cover;
+  }
+
+  &__add {
+    width: 200px;
+    background-color: rgb(97, 193, 97);
+    color: white;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  &__add:hover {
+    background-color: green;
   }
 }
