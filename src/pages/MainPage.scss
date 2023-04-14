@@ -23,6 +23,10 @@
     justify-items: center;
   }
 
+  &__filters {
+    margin-bottom: 20px;
+  }
+
   &__title {
     font-weight: 600;
     font-size: 32px;
@@ -30,6 +34,8 @@
   }
 
   &__pagination {
+    margin: 0 auto;
+
     ul {
       display: flex;
       flex-direction: row;

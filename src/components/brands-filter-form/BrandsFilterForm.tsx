@@ -9,11 +9,12 @@ export type Brand = {
 
 export type FilterFormPropsType = {
   brands:Brand[],
-  handleForm: (event:React.FormEvent<HTMLFormElement>)=>void
+  handleForm: (event:React.FormEvent<HTMLFormElement>)=>void,
+  handleResetForm:()=>void
 }  
 
 const BrandsFilterForm = (props:FilterFormPropsType) => {
-  const {brands,handleForm} = props;
+  const {brands,handleForm,handleResetForm} = props;
   return (
     <form className="brand-filters" onSubmit={handleForm}>
       <h3 className='brand-filters'>Бренды</h3>
@@ -28,7 +29,15 @@ const BrandsFilterForm = (props:FilterFormPropsType) => {
         })}
       </div>
       <button className='brand-filters__submit' type='submit'>Применить</button>
-      <button className='brand-filters__reset'>Сбросить</button>
+      <div className="brand-filters__reset-wrapper">
+        <div className="brand-filters__icon">
+        </div>
+        <input 
+          type='reset' 
+          className='brand-filters__reset' 
+          value={'Сбросить'} 
+          onPointerDown={handleResetForm}/>
+      </div>
     </form>
   )
 }

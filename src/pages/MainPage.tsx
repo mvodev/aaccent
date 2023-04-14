@@ -81,6 +81,10 @@ const MainPage = ()=> {
     setBrandsFilters(brands);
   }
 
+  const handleResetForm = () => {
+    setBrandsFilters([]);
+  }
+
   return (
     <main className="main-page">
       <h1 className='main-page__title'>Тестовое задание интернет магазин</h1>
@@ -88,15 +92,21 @@ const MainPage = ()=> {
         <span>Сортировка:</span>
         <ProductCardsOrder onChange={handleSort}/>
       </div>
-      <aside className='main-page__filters'>
-        <BrandsFilterForm brands={brands} handleForm={handleBrandsForm} />
-      </aside>
-      <div className="main-page__products-wrapper">
-      {
-        currentItems.map((product) => {
-          return <ProductCard key={product.id} {...product} />
-        })
-      }
+      <div className="main-page__wrapper">
+        <aside className='main-page__filters'>
+          <BrandsFilterForm 
+            brands={brands} 
+            handleForm={handleBrandsForm} 
+            handleResetForm={handleResetForm}
+          />
+        </aside>
+        <div className="main-page__products-wrapper">
+        {
+          currentItems.map((product) => {
+            return <ProductCard key={product.id} {...product} />
+          })
+        }
+        </div>
       </div>
       <div className="main-page__pagination">
         <ReactPaginate

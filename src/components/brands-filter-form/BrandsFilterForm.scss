@@ -21,4 +21,20 @@
   &__submit:hover {
     background-color: green;
   }
+
+  &__reset {
+    border: none;
+    color: white;
+    background: none;
+    cursor: pointer;
+    height: 40px;
+    width: 200px;
+    position: relative;
+    text-decoration: underline;
+  }
+
+  &__reset:hover {
+    color: gray;
+  }
+
 }
