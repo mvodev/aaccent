@@ -4,6 +4,12 @@
   gap: 20px;
   align-items: center;
   padding: 10px;
+  max-width: 1920px;
+  width: 100%;
+
+  & .bread-crumbs {
+    align-self: flex-start;
+  }
 
   &__card {
     display: flex;

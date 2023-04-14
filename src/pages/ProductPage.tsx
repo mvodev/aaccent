@@ -4,6 +4,7 @@ import products from '../../sources/assets/products.json';
 import Header from '../components/header/Header';
 import { useAppDispatch } from '../store/hooks';
 import { addToCart } from '../store/cartSlice';
+import BreadCrumbs from '../components/bread-crumbs/BreadCrumbs';
 
 const ProductPage = () => {
   const params = useParams();
@@ -20,6 +21,10 @@ const ProductPage = () => {
     <main className="product">
       <h1 className='product__title'>Карточка товара</h1>
       <Header />
+      <BreadCrumbs links={[
+          {link:'/',name:'Главная страница'},
+          {link: '/',name:'Карточка товара',actual:true}
+        ]}/>
       <article className='product__card'>
         <h2 className='product__subtitle'>{productData?.title}</h2>
         <div className="product__img">
