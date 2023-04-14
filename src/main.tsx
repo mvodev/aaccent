@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound';
 import ProductPage from './pages/ProductPage';
 import {store} from './store/store';
 import { Provider } from 'react-redux';
+import CartPage from './pages/CartPage';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <Routes>
           <Route path='/' element={<MainPage/>} />
           <Route path='/:id' element={<ProductPage/>} />
+          <Route path='/cart' element={<CartPage/>} />
           <Route path='*' element={<NotFound />}/>
         </Routes>
       </BrowserRouter>
