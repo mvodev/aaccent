@@ -1,0 +1,57 @@
+.cart {
+  height: 46px;
+  max-width: 128px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  cursor: pointer;
+  text-decoration: none;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__img {
+    width: 46px;
+    height: 46px;
+    position: relative;
+    background-image: url('../../assets/images/basket.svg');
+  }
+
+  &__goods {
+    width: 22px;
+    height: 22px;
+    background-color: #FFC85E;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__total {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    color: white;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 18px;
+  }
+
+  &__price {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    color: white;
+  }
+
+}  

@@ -6,6 +6,7 @@ import products from '../../sources/assets/products.json';
 import brands from '../../sources/assets/brands.json';
 import ProductCardsOrder from '../components/products-order/ProductCardsOrder';
 import BrandsFilterForm from '../components/brands-filter-form/BrandsFilterForm';
+import Header from '../components/header/Header';
 
 const MainPage = ()=> {
   const [ cards, setCards ] = useState<Array<ProductCardPropsType>>(products.sort(
@@ -88,6 +89,7 @@ const MainPage = ()=> {
   return (
     <main className="main-page">
       <h1 className='main-page__title'>Тестовое задание интернет магазин</h1>
+      <Header />
       <div className="main-page__products-order">
         <span>Сортировка:</span>
         <ProductCardsOrder onChange={handleSort}/>
