@@ -39,7 +39,7 @@ const PayForm = (props:PayFormProps) => {
             />
           )}
         />
-        {errors.phone && <p className="error-message">Invalid Phone</p>}
+        {errors.phone && <span className="pay-form__error">Некорректный номер</span>}
       <input 
         className="pay-form__pay" 
         type="submit" 
