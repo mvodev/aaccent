@@ -5,6 +5,7 @@ import products from '../../sources/assets/products.json';
 import './CartPage.scss';
 import ShortProductCard from '../components/short-product-card/ShortProductCard';
 import BreadCrumbs from '../components/bread-crumbs/BreadCrumbs';
+import PayForm, { Inputs } from '../components/pay-form/PayForm';
 
 const CartPage = () => {
   const dispatch = useAppDispatch();
@@ -12,10 +13,6 @@ const CartPage = () => {
   const cart = useAppSelector(selectCart);
   const [productsCounters,setProductsCounters] = useState<JSX.Element[]>();
   const [total,setTotal] = useState(0);
-
-  const handlePay = () => {
-
-  }
 
   const handleDeleteProduct = (counter:number,id:number) => {
     for (let i=0;i<counter;i++) {
@@ -63,6 +60,10 @@ const CartPage = () => {
     setTotal(+currentTotalPrice.toFixed(2));
   },[cart]);
 
+  const handlePay = (data:Inputs) => {
+    console.log(data)
+  }
+
   return (
     <main className='cart-page'>
       <h1 className='cart-page__title'>Корзина</h1>
@@ -72,10 +73,7 @@ const CartPage = () => {
         ]}/>
       {productsCounters}
       <span className='cart-page__total'>Итого: {total}</span>
-      <button 
-        className='cart-page__pay'
-        onPointerDown={handlePay}  
-      >Оформить</button>
+      <PayForm onSubmit={handlePay}/>
     </main>
   )
 }

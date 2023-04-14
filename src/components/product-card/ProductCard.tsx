@@ -21,15 +21,15 @@ const ProductCard = (props:ProductCardPropsType) => {
   return (
     <div className="product-card">
       <Link to={`/${id}`}>
-      <h3 className='product-card__title'>{title}</h3>
-        <div className="product-card__img">
-          <img src={`../sources/assets${image}`} alt="изображение товара" />
+        <h3 className='product-card__title'>{title}</h3>
+          <div className="product-card__img">
+            <img src={`../sources/assets${image}`} alt="изображение товара" />
+          </div>
+        <div className="product-card__price">
+          <span>{value}</span>
+          <span>&nbsp;</span>
+          <span>{currency}</span>
         </div>
-      <div className="product-card__price">
-        <span>{value}</span>
-        <span>&nbsp;</span>
-        <span>{currency}</span>
-      </div>
       </Link>
     </div>
   )
