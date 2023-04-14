@@ -1,0 +1,31 @@
+.counter-delete {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 77px;
+
+  &__button {
+    width: 43px;
+    height: 34px;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgba(255, 198, 80, 0.3) 0%, rgba(254, 202, 110, 0.3) 97.25%);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1000px;
+  }
+
+  &__button-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+}
+
+@media (max-width:420px) {
+  .counter-delete {
+    gap: 30px;
+  }
+}
