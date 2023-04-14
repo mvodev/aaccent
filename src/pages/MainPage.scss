@@ -6,6 +6,11 @@
   flex-direction: column;
   gap: 20px;
 
+  &__wrapper {
+    display: flex;
+    gap: 20px;
+  }
+
   &__products-order {
     display: flex;
     flex-direction: row;
@@ -79,6 +84,15 @@
     }
   }
 }
+
+@media (max-width:1280px) {
+  .main-page {
+    &__wrapper {
+      flex-direction: column;
+    }
+  }
+}
+
 
 @media (max-width:700px) {
   .main-page {
