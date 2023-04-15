@@ -17,7 +17,6 @@ export const sendCart = createAsyncThunk(
   'cart/sendCart',
   async (payload:string,{ rejectWithValue }) => {
     try {
-      console.log(payload)
       const response = await fetch('https://app.aaccent.su/js/confirm.php',{
         method:'POST',
         body:payload

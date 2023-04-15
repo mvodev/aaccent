@@ -35,7 +35,7 @@ const ProductPage = () => {
       <article className='product__card'>
         <h2 className='product__subtitle'>{productData?.title}</h2>
         <div className="product__img">
-          <img src={`../sources/assets${productData?.image}`} alt="изображение товара" />
+          <img src={`./${productData?.image}`} alt="изображение товара" />
         </div>
         <div className='product__price'>
           <span>Цена:</span>
