@@ -12,7 +12,7 @@ import CartPage from './pages/CartPage';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename='/aaccent'>
         <Routes>
           <Route path='/' element={<MainPage/>} />
           <Route path='/:id' element={<ProductPage/>} />
