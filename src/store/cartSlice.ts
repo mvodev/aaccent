@@ -1,13 +1,35 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { RootState } from './store';
 
-export interface CartState {
+export type CartState = {
   cart: Array<number>,
+  status: null | 'loading' | 'resolved' | 'rejected',
+  error: null | string,
 }
 
 const initialState: CartState = {
-  cart: []
+  cart: [],
+  status:null,
+  error:null,
 };
+
+export const sendCart = createAsyncThunk(
+  'cart/sendCart',
+  async (payload:string,{ rejectWithValue }) => {
+    try {
+      console.log(payload)
+      const response = await fetch('https://app.aaccent.su/js/confirm.php',{
+        method:'POST',
+        body:payload
+      });
+      const data  = await response.json()
+      return data;
+    } catch (error) {
+      return  rejectWithValue(error)
+    }
+  }
+)
+
 
 export const cartSlice = createSlice({
   name: 'cart',
@@ -26,6 +48,19 @@ export const cartSlice = createSlice({
       const length = state.cart.length;
       state.cart.splice(0,length);
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(sendCart.pending, (state) => {
+      state.status = 'loading';
+      state.error = null;
+    }),
+    builder.addCase(sendCart.fulfilled, (state) => {
+      state.status = 'resolved';
+    }),
+    builder.addCase(sendCart.rejected, (state,action) => {
+      state.status = 'rejected';
+      state.error = action.error.message ?? '';
+    })
   },
 });
 
