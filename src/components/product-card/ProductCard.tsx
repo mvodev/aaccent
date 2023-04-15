@@ -23,7 +23,7 @@ const ProductCard = (props:ProductCardPropsType) => {
       <Link to={`/${id}`}>
         <h3 className='product-card__title'>{title}</h3>
           <div className="product-card__img">
-            <img src={`./${image}`} alt="изображение товара" />
+            <img src={`.${image}`} alt="изображение товара" />
           </div>
         <div className="product-card__price">
           <span>{value}</span>
