@@ -18,7 +18,7 @@
 - [Node.js](https://nodejs.org/en/)
 - [Git](https://git-scm.com/)
 
-### Тестовая страница [https://mvodev.github.io//]
+### Тестовая страница [https://mvodev.github.io/aaccent/]
 
 ### Клонирование
 ```
